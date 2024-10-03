@@ -86,11 +86,11 @@ if submit_button:
             X, y = create_sequences(df, target_cols, n_steps)
 
             # Train models for each target variable
-            lstm_model = train_model(X, y, "LSTM")
+            #lstm_model = train_model(X, y, "LSTM")
             gru_model = train_model(X, y, "GRU")
 
             # Forecast future values with LSTM and GRU
-            forecast_lstm = forecast_best_model(lstm_model, "LSTM", df[target_cols].values, scaler, n_steps, n_days)
+            #forecast_lstm = forecast_best_model(lstm_model, "LSTM", df[target_cols].values, scaler, n_steps, n_days)
             forecast_gru = forecast_best_model(gru_model, "GRU", df[target_cols].values, scaler, n_steps, n_days)
 
             # Inverse transform the entire dataset at once
@@ -109,7 +109,7 @@ if submit_button:
             # Plot forecasted data
             future_dates = pd.date_range(start=df.index[-1] + pd.DateOffset(days=1), periods=n_days, freq='D')
             for i, col in enumerate(target_cols):
-                plt.plot(future_dates, forecast_lstm[:, i], label=f'Forecasted LSTM {col}', linestyle='dashed')
+                #plt.plot(future_dates, forecast_lstm[:, i], label=f'Forecasted LSTM {col}', linestyle='dashed')
                 plt.plot(future_dates, forecast_gru[:, i], label=f'Forecasted GRU {col}', linestyle='dotted')
 
             plt.xlabel('Date')
