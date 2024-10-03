@@ -66,7 +66,7 @@ st.set_page_config(page_title="Skavch Multi-Target Forecasting Engine", page_ico
 # Add an image to the header
 #st.image("bg1.jpg", use_column_width=True)  # Adjust the image path as necessary
 
-st.title("Skavch Multi-Target Sales Forecasting Engine")
+st.title("Skavch Stock Forecasting Engine")
 
 uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 n_days = st.number_input("Enter the number of future days to forecast", min_value=1, max_value=36)
